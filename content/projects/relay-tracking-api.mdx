@@ -1,0 +1,36 @@
+## Overview
+
+Cobalt Freight works with 40 carrier partners. Status updates arrived by email, CSV and phone, and customers had no reliable way to see where their shipment was.
+
+I built Relay, a tracking API that carriers push events to and that customers query or subscribe to through webhooks.
+
+## The challenge
+
+- **Messy inputs.** Each carrier used its own status codes and timestamps.
+- **Bursty traffic.** End-of-day batch uploads produced large spikes.
+- **Trust.** Customers needed to know a webhook really came from Cobalt.
+
+## Approach
+
+Incoming events are validated, normalised to one status vocabulary and written to an append-only table. A queue fans them out to subscribers, so a slow customer endpoint never slows ingestion.
+
+Outgoing webhooks are signed with HMAC, and receivers can verify them in a few lines:
+
+```ts
+import { createHmac, timingSafeEqual } from "node:crypto";
+
+export const isValidSignature = (body: string, header: string, secret: string) => {
+  const expected = createHmac("sha256", secret).update(body).digest("hex");
+  return timingSafeEqual(Buffer.from(expected), Buffer.from(header));
+};
+```
+
+Deliveries retry with exponential backoff, and every attempt is visible in a self-serve delivery log.
+
+## Outcome
+
+Relay now handles about 2.1 million events a day with a p95 latency of 120 ms. All 40 carriers are integrated, and customer support tickets asking "where is my shipment?" fell by more than half.
+
+> "Onboarding a new carrier went from a project to an afternoon."
+>
+> — Head of engineering, Cobalt Freight

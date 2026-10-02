@@ -1,0 +1,46 @@
+## Overview
+
+Ledgerly's founders had a validated idea, a Figma prototype and a waiting list of 800 freelancers. They needed someone to turn it into a product people would pay for, without hiring a full team before they had revenue.
+
+I owned the build end to end: data model, API, front end, payments and infrastructure.
+
+## The challenge
+
+- **Money is unforgiving.** Invoices, taxes and currency conversion had to be correct to the cent, with a full audit trail.
+- **Tight runway.** The launch date was fixed by the next funding conversation.
+- **Small team later.** The code had to be easy for a future hire to pick up.
+
+## Approach
+
+We shipped in two-week slices, each one usable by a group of beta testers. Invoicing came first, then expenses, then recurring billing.
+
+All amounts are stored as integer minor units with an explicit currency, never as floats:
+
+```ts
+type Money = { amountMinor: bigint; currency: "EUR" | "USD" | "GBP" };
+
+const addMoney = (a: Money, b: Money): Money => {
+  if (a.currency !== b.currency) throw new Error("Currency mismatch");
+  return { amountMinor: a.amountMinor + b.amountMinor, currency: a.currency };
+};
+```
+
+Stripe handles card payments and payouts. Every webhook is verified, stored first and processed second, so a failed handler can be replayed safely.
+
+## Architecture
+
+| Layer      | Choice                               |
+| ---------- | ------------------------------------ |
+| Front end  | Next.js App Router, server rendering |
+| API        | Route handlers with typed contracts  |
+| Data       | PostgreSQL with row-level tenancy    |
+| Payments   | Stripe Billing and Connect           |
+| Hosting    | Vercel plus AWS RDS                  |
+
+## Outcome
+
+Ledgerly launched on schedule. It reached 1,200 paying users in its first year and closed its seed round on the back of that traction.
+
+> "Petrut felt like a co-founder for those fourteen weeks. He pushed back when we were over-scoping and shipped every promise he made."
+>
+> — Founder, Ledgerly

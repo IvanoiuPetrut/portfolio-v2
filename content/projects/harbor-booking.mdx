@@ -1,0 +1,40 @@
+## Overview
+
+Marina Group Adriatic runs three marinas. Berths were booked by phone and tracked in a shared spreadsheet, which meant double bookings in high season and staff glued to the phone.
+
+I designed and built a booking platform that shows live berth availability, takes deposits online and gives harbour staff one schedule for all three sites.
+
+## The challenge
+
+- **Boats are not hotel rooms.** A berth fits a boat only within length, beam and draught limits, and some berths can be split.
+- **Seasonal spikes.** Most of a year's bookings arrive in about six weeks.
+- **Non-technical staff.** The admin side had to work on a tablet, on a pontoon, in bright sun.
+
+## Approach
+
+Availability is computed from berth dimensions and existing bookings in a single SQL query, so the result is always consistent with the database:
+
+```sql
+select b.id, b.code
+from berths b
+where b.marina_id = $1
+  and b.max_length_m >= $2
+  and b.max_beam_m   >= $3
+  and not exists (
+    select 1 from bookings k
+    where k.berth_id = b.id
+      and k.stay && tstzrange($4, $5)
+  );
+```
+
+An exclusion constraint on the bookings table makes double bookings impossible, even if two people click at the same moment.
+
+The admin views use large touch targets and a high-contrast theme designed for outdoor use.
+
+## Outcome
+
+In the first season, 68% of bookings were made online without staff involvement. Staff saved around nine hours a week on admin, and there were zero double bookings.
+
+> "Our harbour masters actually like using it, which I did not think was possible."
+>
+> — Operations director, Marina Group Adriatic
