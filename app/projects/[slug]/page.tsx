@@ -59,7 +59,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             All work
           </Link>
 
-          <header className="mt-10">
+          <header data-dock-trigger className="mt-10">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-ink">Case study</p>
             <h1 className={`${titleStyle} mt-4 break-words`}>{project.title}</h1>
             <OutlineEcho text={project.title} count={1} className={`${titleStyle} break-words`} />

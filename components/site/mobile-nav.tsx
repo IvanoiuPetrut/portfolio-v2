@@ -35,7 +35,7 @@ export const MobileNav = ({ contactHref }: { contactHref: string }) => {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="absolute inset-x-0 top-full border-b border-line bg-bg px-4 pb-6 pt-2"
+          className="absolute inset-x-0 top-full border-b border-line bg-bg px-4 pb-6 pt-2 group-data-docked/header:top-[calc(100%+0.5rem)] group-data-docked/header:rounded-3xl group-data-docked/header:border group-data-docked/header:px-6 group-data-docked/header:shadow-lg group-data-docked/header:shadow-black/15"
         >
           <ul className="flex flex-col">
             {navItems.map((item) => (

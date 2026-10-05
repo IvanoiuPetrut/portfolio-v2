@@ -29,6 +29,7 @@ const contactLinks = [
 export const Hero = () => (
   <section
     aria-label="Introduction"
+    data-dock-trigger
     className={`relative overflow-x-clip border-b border-line ${heroSizing}`}
   >
     <Container className="relative flex flex-col justify-center pb-20 pt-10 lg:min-h-[calc(100svh-4rem)] lg:pb-12">
