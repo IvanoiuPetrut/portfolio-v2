@@ -43,7 +43,8 @@
   --panel-ink: #f2ebdd;
   --panel-muted: #b7bfb5;
   --panel-line: #15201a;
-  --header: rgb(245 239 227 / 0.82);
+  /* Lower than dark's 0.78: a light veil washes colours out, so it needs less opacity to read as equally translucent. */
+  --header: rgb(245 239 227 / 0.64);
 }
 
 @theme inline {
