@@ -38,7 +38,9 @@ export const ProjectArt = ({ project, size = "card", className = "" }: ProjectAr
         />
       ) : (
         <div aria-hidden className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-          <Sparkle className={`absolute right-6 top-6 ${isHero ? "size-10" : "size-7"}`} />
+          <Sparkle
+            className={`absolute right-6 top-6 transition duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover/project:rotate-90 group-hover/project:scale-125 motion-reduce:transition-none ${isHero ? "size-10" : "size-7"}`}
+          />
           <p className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">
             {project.stack.slice(0, 3).join(" · ")}
           </p>

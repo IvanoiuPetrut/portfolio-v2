@@ -9,7 +9,7 @@ type ProjectCardProps = { project: Project };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => (
   <article
-    className={`${cardSurface} group flex flex-col p-3 has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-4 has-[a:focus-visible]:outline-accent-ink`}
+    className={`${cardSurface} group/project flex flex-col p-3 transition-[scale] duration-150 ease-out has-[a:active]:scale-98 motion-reduce:transition-none has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-4 has-[a:focus-visible]:outline-accent-ink`}
   >
     <ProjectCover project={project} className="aspect-[4/3]" />
     <div className="flex flex-1 flex-col p-3 md:p-4">
@@ -34,7 +34,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => (
       </ul>
       <p className="mt-auto flex items-center gap-1 pt-6 text-sm font-medium text-accent-ink">
         Read case study
-        <ArrowUpRight aria-hidden className="size-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        <ArrowUpRight aria-hidden className="size-4 transition group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5" />
       </p>
     </div>
   </article>
