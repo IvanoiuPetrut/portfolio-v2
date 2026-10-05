@@ -1,49 +1,66 @@
-import type { SkillGroup, Tool } from "./types";
+import { Accessibility, Cloud, Layers, PanelsTopLeft, Server, SquareCode, Workflow, Wrench } from "lucide-react";
+import {
+  siDatadog,
+  siDocker,
+  siDotnet,
+  siFigma,
+  siGithubactions,
+  siGraphql,
+  siHtml5,
+  siNodedotjs,
+  siPostgresql,
+  siPostman,
+  siReact,
+  siRedis,
+  siTerraform,
+  siTypescript,
+  siVercel,
+} from "simple-icons";
+import type { SkillGroup } from "./types";
 
-export const tools = [
-  { abbr: "Vs", name: "VS Code" },
-  { abbr: "Gh", name: "GitHub Actions" },
-  { abbr: "Dk", name: "Docker" },
-  { abbr: "Aw", name: "AWS" },
-  { abbr: "Vc", name: "Vercel" },
-  { abbr: "Fg", name: "Figma" },
-  { abbr: "Pm", name: "Postman" },
-  { abbr: "Dd", name: "Datadog" },
-] as const satisfies readonly Tool[];
-
-export const skillGroups = [
+// simple-icons has no AWS, C# or VS Code marks for trademark reasons, so those use generic icons.
+export const skillGroups: readonly SkillGroup[] = [
   {
     title: "Frontend",
+    icon: PanelsTopLeft,
     skills: [
-      { name: "TypeScript", level: "Expert" },
-      { name: "React and Next.js", level: "Expert" },
-      { name: "HTML and CSS", level: "Expert" },
-      { name: "Accessibility", level: "Advanced" },
+      { name: "TypeScript", icon: siTypescript, level: "Expert" },
+      { name: "React and Next.js", icon: siReact, level: "Expert" },
+      { name: "HTML and CSS", icon: siHtml5, level: "Expert" },
+      { name: "Accessibility", icon: Accessibility, level: "Advanced" },
     ],
   },
   {
     title: "Backend",
+    icon: Server,
     skills: [
-      { name: "Node.js", level: "Expert" },
-      { name: "C# and .NET", level: "Advanced" },
-      { name: "PostgreSQL", level: "Advanced" },
-      { name: "REST and GraphQL", level: "Advanced" },
+      { name: "Node.js", icon: siNodedotjs, level: "Expert" },
+      { name: "C# and .NET", icon: siDotnet, level: "Advanced" },
+      { name: "PostgreSQL", icon: siPostgresql, level: "Advanced" },
+      { name: "REST and GraphQL", icon: siGraphql, level: "Advanced" },
     ],
   },
   {
     title: "Cloud and data",
+    icon: Layers,
     skills: [
-      { name: "AWS (Lambda, S3, RDS)", level: "Advanced" },
-      { name: "Redis", level: "Working" },
-      { name: "Terraform", level: "Working" },
-      { name: "CI/CD pipelines", level: "Advanced" },
+      { name: "AWS (Lambda, S3, RDS)", icon: Cloud, level: "Advanced" },
+      { name: "Redis", icon: siRedis, level: "Working" },
+      { name: "Terraform", icon: siTerraform, level: "Working" },
+      { name: "CI/CD pipelines", icon: Workflow, level: "Advanced" },
     ],
   },
-] as const satisfies readonly SkillGroup[];
-
-export const practices = [
-  "Domain modelling",
-  "Testing strategy",
-  "Code review",
-  "Observability",
-] as const;
+  {
+    title: "Everyday tools",
+    icon: Wrench,
+    skills: [
+      { name: "VS Code", icon: SquareCode },
+      { name: "GitHub Actions", icon: siGithubactions },
+      { name: "Docker", icon: siDocker },
+      { name: "Vercel", icon: siVercel },
+      { name: "Figma", icon: siFigma },
+      { name: "Postman", icon: siPostman },
+      { name: "Datadog", icon: siDatadog },
+    ],
+  },
+];

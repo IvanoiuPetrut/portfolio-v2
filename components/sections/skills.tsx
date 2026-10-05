@@ -1,12 +1,34 @@
-import { practices, skillGroups, tools } from "@/content/skills";
-import type { SkillLevel } from "@/content/types";
+import type { SimpleIcon } from "simple-icons";
+import { skillGroups } from "@/content/skills";
+import type { Skill, SkillLevel } from "@/content/types";
 import { Section } from "../ui/section";
+import { SpotlightGrid } from "../ui/spotlight-grid";
 
-const levelStyles: Record<SkillLevel, string> = {
-  Expert: "bg-accent text-on-accent border-accent",
-  Advanced: "border-accent-ink text-accent-ink",
-  Working: "border-line text-ink-muted",
+const levels: Record<SkillLevel, number> = { Expert: 3, Advanced: 2, Working: 1 };
+
+const isBrand = (icon: Skill["icon"]): icon is SimpleIcon => "path" in icon;
+
+const SkillIcon = ({ icon }: { icon: Skill["icon"] }) => {
+  if (isBrand(icon)) {
+    return (
+      <svg aria-hidden viewBox="0 0 24 24" fill="currentColor" className="size-5">
+        <path d={icon.path} />
+      </svg>
+    );
+  }
+  const Icon = icon;
+  return <Icon aria-hidden className="size-5" strokeWidth={1.75} />;
 };
+
+const LevelMeter = ({ level }: { level: SkillLevel }) => (
+  <span aria-hidden className="flex gap-1">
+    {[1, 2, 3].map((step) => (
+      <span key={step} className="h-1.5 w-4 overflow-hidden rounded-full bg-line">
+        {step <= levels[level] && <span className="meter-fill block size-full bg-accent" />}
+      </span>
+    ))}
+  </span>
+);
 
 export const Skills = () => (
   <Section
@@ -16,58 +38,42 @@ export const Skills = () => (
     title="Tools and technologies"
     className="border-t border-line"
   >
-    <h3 className="font-display text-2xl font-bold">Coding skills</h3>
-    <div className="reveal mt-6 grid gap-5 md:grid-cols-3">
-      {skillGroups.map((group) => (
-        <section
-          key={group.title}
-          aria-label={group.title}
-          className="rounded-3xl border border-line bg-surface p-6 md:p-7"
-        >
-          <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-accent-ink">{group.title}</h4>
-          <ul className="mt-5 divide-y divide-line">
-            {group.skills.map((skill) => (
-              <li key={skill.name} className="flex items-center justify-between gap-4 py-3">
-                <span className="font-medium">{skill.name}</span>
-                <span
-                  className={`shrink-0 rounded-full border px-2.5 py-0.5 font-mono text-[11px] ${levelStyles[skill.level]}`}
-                >
-                  {skill.level}
+    <ul aria-hidden className="mb-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-muted">
+      {(Object.keys(levels) as SkillLevel[]).map((level) => (
+        <li key={level} className="flex items-center gap-2">
+          <LevelMeter level={level} />
+          {level}
+        </li>
+      ))}
+    </ul>
+
+    <SpotlightGrid className="grid gap-5 md:grid-cols-2">
+      {skillGroups.map(({ title, icon: GroupIcon, skills }) => (
+        <li key={title} className="spotlight reveal rounded-3xl border border-line bg-surface p-6 md:p-7">
+          <div className="flex items-center gap-3">
+            <span className="inline-flex size-10 items-center justify-center rounded-full bg-accent text-on-accent">
+              <GroupIcon aria-hidden className="size-[18px]" />
+            </span>
+            <h3 className="font-display text-2xl font-bold">{title}</h3>
+          </div>
+          <ul className={`mt-6 grid gap-x-4 gap-y-3 ${skills.some((skill) => skill.level) ? "" : "grid-cols-2"}`}>
+            {skills.map((skill) => (
+              <li key={skill.name} className="flex items-center gap-3">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-line bg-bg">
+                  <SkillIcon icon={skill.icon} />
                 </span>
+                <span className="font-medium leading-tight">{skill.name}</span>
+                {skill.level && (
+                  <span className="ml-auto">
+                    <LevelMeter level={skill.level} />
+                    <span className="sr-only">{skill.level}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>
-        </section>
+        </li>
       ))}
-    </div>
-
-    <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16">
-      <div className="reveal">
-        <h3 className="font-display text-2xl font-bold">Software skills</h3>
-        <ul className="mt-6 grid grid-cols-4 gap-x-3 gap-y-5 sm:grid-cols-8">
-          {tools.map((tool) => (
-            <li key={tool.name} className="flex flex-col items-center gap-2 text-center">
-              <span
-                aria-hidden
-                className="flex size-14 items-center justify-center rounded-xl border-2 border-ink font-mono text-lg font-bold"
-              >
-                {tool.abbr}
-              </span>
-              <span className="text-xs leading-tight text-ink-muted">{tool.name}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="reveal">
-        <h3 className="font-display text-2xl font-bold">Practices</h3>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {practices.map((practice) => (
-            <li key={practice} className="rounded-full bg-panel px-4 py-2 text-sm text-panel-ink">
-              {practice}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </SpotlightGrid>
   </Section>
 );

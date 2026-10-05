@@ -126,12 +126,25 @@
   }
 }
 
+@keyframes meter-fill {
+  from {
+    scale: 0 1;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal linear both;
       animation-timeline: view();
       animation-range: entry 0% entry 35%;
+    }
+
+    .meter-fill {
+      transform-origin: left;
+      animation: meter-fill linear both;
+      animation-timeline: view();
+      animation-range: entry 40% cover 40%;
     }
   }
 
@@ -159,6 +172,48 @@
 
 ::view-transition {
   pointer-events: none;
+}
+
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before,
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+/* The ring mask keeps this gradient to the 1px border, so the edge lights up near the pointer. */
+.spotlight::before {
+  inset: -1px;
+  padding: 1px;
+  background: radial-gradient(14rem circle at var(--spot-x) var(--spot-y), var(--accent), transparent 70%);
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+}
+
+.spotlight::after {
+  z-index: -1;
+  background: radial-gradient(
+    22rem circle at var(--spot-x) var(--spot-y),
+    color-mix(in oklab, var(--accent) 7%, transparent),
+    transparent 70%
+  );
+}
+
+@media (hover: hover) {
+  .spotlight-grid:hover .spotlight::before,
+  .spotlight-grid:hover .spotlight::after {
+    opacity: 1;
+  }
 }
 
 ::view-transition-group(.morph) {

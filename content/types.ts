@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import type { StaticImageData } from "next/image";
+import type { SimpleIcon } from "simple-icons";
 
 export type Profile = {
   name: string;
@@ -28,13 +29,18 @@ export type ExperienceItem = {
   summary: string;
 };
 
-export type Tool = { abbr: string; name: string };
-
 export type SkillLevel = "Expert" | "Advanced" | "Working";
+
+export type Skill = {
+  name: string;
+  icon: SimpleIcon | LucideIcon;
+  level?: SkillLevel;
+};
 
 export type SkillGroup = {
   title: string;
-  skills: readonly { name: string; level: SkillLevel }[];
+  icon: LucideIcon;
+  skills: readonly Skill[];
 };
 
 export type Hobby = { label: string; detail: string; icon: LucideIcon };
