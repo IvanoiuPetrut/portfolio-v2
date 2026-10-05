@@ -45,7 +45,7 @@ export const DockingHeader = ({ children }: { children: ReactNode }) => {
       >
         <div
           aria-hidden
-          className={`absolute inset-0 -z-10 rounded-4xl border border-line bg-header opacity-0 shadow-lg shadow-black/15 backdrop-blur-md transition-opacity group-data-docked/header:opacity-100 ${motion}`}
+          className={`absolute inset-0 -z-10 rounded-full border border-line bg-header opacity-0 shadow-lg shadow-black/15 backdrop-blur-md transition-opacity group-data-docked/header:opacity-100 ${motion}`}
         />
         {children}
       </Container>

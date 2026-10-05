@@ -105,6 +105,27 @@
   font-variation-settings: "SOFT" 100, "WONK" 0;
 }
 
+/* Browsers without corner-shape skip this block and keep the default round corners. */
+@supports (corner-shape: squircle) {
+  /* A squircle looks tighter than a circle at the same radius, so the radii grow to read as soft. */
+  :root {
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.75rem;
+    --radius-3xl: 2.5rem;
+    --radius-4xl: 3.5rem;
+  }
+
+  *,
+  ::before,
+  ::after {
+    corner-shape: squircle;
+  }
+
+  .rounded-full {
+    corner-shape: round;
+  }
+}
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -273,7 +294,7 @@
   margin-block: 2rem;
   overflow-x: auto;
   border: 1px solid var(--line);
-  border-radius: 1rem;
+  border-radius: var(--radius-2xl);
   background: var(--surface);
   padding-block: 1.25rem;
   font-size: 0.875rem;
