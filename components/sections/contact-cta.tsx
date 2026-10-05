@@ -44,7 +44,7 @@ export const ContactCta = ({ title = "Have a project in mind?" }: ContactCtaProp
   >
     <div
       aria-hidden
-      className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_85%,transparent)]"
+      className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,#000_15%,#000_75%,transparent)]"
     >
       {tiles.map((tile, index) => (
         <div

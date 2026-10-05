@@ -3,8 +3,8 @@ import { Container } from "../ui/container";
 import { GithubIcon, LinkedinIcon } from "../ui/social-icons";
 
 export const SiteFooter = () => (
-  <footer className="border-t border-line py-10">
-    <Container className="flex flex-col items-start justify-between gap-6 text-sm text-ink-muted sm:flex-row sm:items-center">
+  <footer className="py-6">
+    <Container className="flex flex-col items-start justify-between gap-4 text-sm text-ink-muted sm:flex-row sm:items-center">
       <p>
         © {new Date().getFullYear()} {profile.name}. Built with Next.js.
       </p>
