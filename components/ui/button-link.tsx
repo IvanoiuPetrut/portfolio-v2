@@ -22,7 +22,7 @@ export const ButtonLink = ({
   variant = "primary",
   className = "",
 }: ButtonLinkProps) => {
-  const classes = `inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition active:scale-98 ${variants[variant]} ${className}`;
 
   if (isExternal(href)) {
     const opensTab = href.startsWith("http");

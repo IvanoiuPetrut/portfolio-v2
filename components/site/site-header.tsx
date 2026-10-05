@@ -29,7 +29,7 @@ export const SiteHeader = () => (
       <ThemeToggle />
       <a
         href={contactHref}
-        className="hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-on-accent transition hover:brightness-110 sm:inline-flex"
+        className="hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-on-accent transition hover:brightness-110 active:scale-98 sm:inline-flex"
       >
         Start a project
       </a>

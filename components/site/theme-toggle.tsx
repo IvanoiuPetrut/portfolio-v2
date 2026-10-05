@@ -54,7 +54,7 @@ export const ThemeToggle = () => {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition-colors hover:border-accent-ink hover:text-accent-ink"
+      className="inline-flex size-10 items-center justify-center rounded-full border border-line text-ink transition hover:border-accent-ink hover:text-accent-ink active:scale-98"
     >
       <span className="theme-toggle-icon">
         <Sun aria-hidden className="hidden size-[18px] dark:block" />

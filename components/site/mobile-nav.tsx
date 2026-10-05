@@ -26,7 +26,7 @@ export const MobileNav = ({ contactHref }: { contactHref: string }) => {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex size-10 items-center justify-center rounded-full border border-line"
+        className="inline-flex size-10 items-center justify-center rounded-full border border-line transition active:scale-98"
       >
         {open ? <X aria-hidden className="size-5" /> : <Menu aria-hidden className="size-5" />}
         <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
@@ -53,7 +53,7 @@ export const MobileNav = ({ contactHref }: { contactHref: string }) => {
           <a
             href={contactHref}
             onClick={close}
-            className="mt-6 inline-flex rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-on-accent"
+            className="mt-6 inline-flex rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-on-accent transition active:scale-98"
           >
             Start a project
           </a>
