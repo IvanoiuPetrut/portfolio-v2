@@ -63,7 +63,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent-ink">Case study</p>
             <h1 className={`${titleStyle} mt-4 break-words`}>{project.title}</h1>
             <OutlineEcho text={project.title} count={1} className={`${titleStyle} break-words`} />
-            <p className="mt-8 max-w-3xl text-xl leading-9 md:text-2xl md:leading-10">{project.summary}</p>
+            <p className="mt-8 max-w-prose text-xl leading-prose md:text-2xl">{project.summary}</p>
 
             <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
               {facts.map((fact) => (

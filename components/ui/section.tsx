@@ -34,7 +34,7 @@ export const Section = ({
           {title}
           <Sparkle className="mt-1 size-5 text-accent-2 md:size-7" />
         </h2>
-        {intro && <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-muted">{intro}</p>}
+        {intro && <p className="mt-5 max-w-prose text-lg leading-prose text-ink-muted">{intro}</p>}
       </header>
       {children}
     </Container>

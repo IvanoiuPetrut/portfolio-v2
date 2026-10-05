@@ -49,7 +49,7 @@ export const Hero = () => (
           <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent-ink">
             {profile.role} · Freelance
           </p>
-          <p className="mt-4 text-lg leading-8 text-ink md:text-xl md:leading-9">{profile.about}</p>
+          <p className="mt-4 max-w-prose text-lg leading-prose text-ink md:text-xl">{profile.about}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <ButtonLink href={`mailto:${profile.email}`}>
               Start a project

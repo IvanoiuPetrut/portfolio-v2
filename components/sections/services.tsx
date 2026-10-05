@@ -17,7 +17,7 @@ export const Services = () => (
             <Icon aria-hidden className="size-5" />
           </span>
           <h3 className="font-display mt-6 text-2xl font-bold">{title}</h3>
-          <p className="mt-3 leading-7 text-ink-muted">{summary}</p>
+          <p className="mt-3 max-w-prose leading-prose text-ink-muted">{summary}</p>
           <ul className="mt-6 space-y-2 border-t border-line pt-6 text-sm">
             {deliverables.map((item) => (
               <li key={item} className="flex items-center gap-3">

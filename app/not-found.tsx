@@ -24,7 +24,7 @@ export default function NotFound() {
       </div>
 
       <h1 className="font-display mt-10 text-4xl font-bold md:text-5xl">This page took the day off</h1>
-      <p className="mt-4 max-w-xl text-lg leading-8 text-ink-muted">
+      <p className="mt-4 max-w-prose text-lg leading-prose text-ink-muted">
         The link might be old, or the page moved somewhere better. Nothing’s broken on your end, promise.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
@@ -62,7 +62,7 @@ export default function NotFound() {
                     className="size-4 text-accent-ink transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
-                <span className="mt-2 leading-7 text-ink-muted">{project.summary}</span>
+                <span className="mt-2 leading-prose text-ink-muted">{project.summary}</span>
               </Link>
             </li>
           ))}

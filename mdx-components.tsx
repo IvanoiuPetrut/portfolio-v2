@@ -9,7 +9,7 @@ const components = {
     </h2>
   ),
   h3: ({ children }) => <h3 className="font-display mt-10 mb-3 text-2xl font-bold">{children}</h3>,
-  p: ({ children }) => <p className="my-5 text-lg leading-8">{children}</p>,
+  p: ({ children }) => <p className="my-5 max-w-prose text-lg leading-prose">{children}</p>,
   a: ({ href = "", children }) => (
     <a
       href={href}
@@ -21,10 +21,10 @@ const components = {
   ),
   strong: ({ children }) => <strong className="font-semibold text-ink">{children}</strong>,
   ul: ({ children }) => (
-    <ul className="my-6 list-disc space-y-3 pl-6 text-lg leading-8 marker:text-accent-2">{children}</ul>
+    <ul className="my-6 list-disc max-w-prose space-y-3 pl-6 text-lg leading-prose marker:text-accent-2">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="my-6 list-decimal space-y-3 pl-6 text-lg leading-8 marker:font-mono marker:text-accent-ink">
+    <ol className="my-6 list-decimal max-w-prose space-y-3 pl-6 text-lg leading-prose marker:font-mono marker:text-accent-ink">
       {children}
     </ol>
   ),

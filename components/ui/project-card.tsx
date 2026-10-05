@@ -24,7 +24,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => (
           {project.title}
         </Link>
       </h3>
-      <p className="mt-3 leading-7 text-ink-muted">{project.summary}</p>
+      <p className="mt-3 max-w-prose leading-prose text-ink-muted">{project.summary}</p>
       <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tech stack">
         {project.stack.map((tech) => (
           <li key={tech}>

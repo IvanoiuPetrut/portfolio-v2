@@ -21,7 +21,7 @@ export const Experience = () => (
             <div>
               <h3 className="font-display text-2xl font-bold md:text-3xl">{item.role}</h3>
               <p className="mt-1 font-medium">{item.company}</p>
-              <p className="mt-3 max-w-2xl leading-7 opacity-90">{item.summary}</p>
+              <p className="mt-3 max-w-prose leading-prose opacity-90">{item.summary}</p>
             </div>
           </li>
         ))}
