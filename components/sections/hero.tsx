@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { profile } from "@/content/profile";
 import { ButtonLink } from "../ui/button-link";
 import { Container } from "../ui/container";
@@ -51,9 +51,8 @@ export const Hero = () => (
           </p>
           <p className="mt-4 max-w-prose text-lg leading-prose text-ink md:text-xl">{profile.about}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <ButtonLink href={`mailto:${profile.email}`}>
+            <ButtonLink href={`mailto:${profile.email}`} arrow>
               Start a project
-              <ArrowRight aria-hidden className="size-4" />
             </ButtonLink>
             <ButtonLink href="/#work" variant="secondary">
               See my work

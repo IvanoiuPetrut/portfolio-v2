@@ -1,4 +1,4 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import type { CSSProperties } from "react";
 import { profile } from "@/content/profile";
 import { projects } from "@/content/projects";
@@ -77,9 +77,8 @@ export const ContactCta = ({ title = "Have a project in mind?" }: ContactCtaProp
           <Mail aria-hidden className="size-4" />
           Let’s talk
         </ButtonLink>
-        <ButtonLink href="/#work" variant="secondary" className="bg-bg">
+        <ButtonLink href="/#work" variant="secondary" arrow className="bg-bg">
           Explore the projects
-          <ArrowRight aria-hidden className="size-4" />
         </ButtonLink>
       </div>
     </div>
