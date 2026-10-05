@@ -11,7 +11,6 @@ export type Profile = {
   location: string;
   email: string;
   socials: { github: string; linkedin: string };
-  availability: { open: boolean; note: string };
   photo?: StaticImageData;
 };
 

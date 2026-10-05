@@ -3,7 +3,6 @@ import { profile } from "@/content/profile";
 import { ButtonLink } from "../ui/button-link";
 import { Container } from "../ui/container";
 import { OutlineEcho } from "../ui/outline-echo";
-import { Pill } from "../ui/pill";
 import { Portrait } from "../ui/portrait";
 import { GithubIcon, LinkedinIcon } from "../ui/social-icons";
 import { Sparkle } from "../ui/sparkle";
@@ -17,7 +16,7 @@ const heroSizing = [
   "lg:[--hero-fs:clamp(4.5rem,min(18vw,17svh),13.5rem)]",
   "[--echo-lines:2]",
   "lg:[@media(max-height:820px)]:[--echo-lines:1]",
-  "lg:[--portrait-h:clamp(14rem,calc(100svh-22rem-var(--hero-fs)*0.8),30rem)]",
+  "lg:[--portrait-h:clamp(14rem,calc(100svh-19rem-var(--hero-fs)*0.8),30rem)]",
 ].join(" ");
 
 const contactLinks = [
@@ -33,20 +32,7 @@ export const Hero = () => (
     className={`relative overflow-x-clip border-b border-line ${heroSizing}`}
   >
     <Container className="relative flex flex-col justify-center pb-20 pt-10 lg:min-h-[calc(100svh-4rem)] lg:pb-12">
-      <div className="flex flex-wrap items-center gap-3">
-        {profile.availability.open && (
-          <Pill className="text-ink">
-            <span aria-hidden className="size-2 rounded-full bg-[#5fbf7f]" />
-            {profile.availability.note}
-          </Pill>
-        )}
-        <Pill>
-          <MapPin aria-hidden className="size-3.5" />
-          {profile.location}
-        </Pill>
-      </div>
-
-      <div className="relative mt-6">
+      <div className="relative">
         <h1 className={headline}>
           {profile.firstName}
           <span className="sr-only"> {profile.name.split(" ").slice(1).join(" ")}, {profile.role}</span>

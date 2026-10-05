@@ -14,5 +14,4 @@ export const profile = {
     github: "https://github.com/your-handle",
     linkedin: "https://www.linkedin.com/in/your-handle",
   },
-  availability: { open: true, note: "Booking projects from November" },
 } satisfies Profile;
