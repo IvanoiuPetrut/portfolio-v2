@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site/site-footer";
+import { ScrollRestoration } from "@/components/site/scroll-restoration";
 import { SiteHeader } from "@/components/site/site-header";
 import { profile } from "@/content/profile";
 import { siteUrl } from "@/lib/site";
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
+        <ScrollRestoration />
         <SiteHeader />
         <main id="main" tabIndex={-1} className="flex-1 outline-none">
           {children}
