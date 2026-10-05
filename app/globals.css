@@ -117,6 +117,15 @@
   }
 }
 
+@keyframes drift {
+  from {
+    translate: 0 calc(var(--drift) * -1);
+  }
+  to {
+    translate: 0 var(--drift);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .reveal {
@@ -128,6 +137,10 @@
 
   .spin-slow {
     animation: spin-slow 24s linear infinite;
+  }
+
+  .drift {
+    animation: drift var(--drift-period) ease-in-out var(--drift-delay) infinite alternate;
   }
 }
 

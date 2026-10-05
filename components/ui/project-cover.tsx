@@ -3,9 +3,15 @@ import { ViewTransition } from "react";
 import type { Project, ProjectTone } from "@/content/types";
 import { Sparkle } from "./sparkle";
 
-type ProjectCoverProps = {
+const imageSizes = {
+  hero: "(min-width: 1152px) 72rem, 100vw",
+  card: "(min-width: 768px) 36rem, 100vw",
+  tile: "(min-width: 640px) 20vw, 9rem",
+} as const;
+
+type ProjectArtProps = {
   project: Project;
-  size?: "card" | "hero";
+  size?: keyof typeof imageSizes;
   className?: string;
 };
 
@@ -15,35 +21,42 @@ const tones: Record<ProjectTone, string> = {
   forest: "bg-brand text-on-brand [--outline:var(--accent)]",
 };
 
-export const ProjectCover = ({ project, size = "card", className = "" }: ProjectCoverProps) => {
+/** The cover artwork alone, for places that repeat a project and so cannot share its morph name. */
+export const ProjectArt = ({ project, size = "card", className = "" }: ProjectArtProps) => {
   const isHero = size === "hero";
 
   return (
-    <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
-      <div className={`@container relative overflow-hidden rounded-2xl ${tones[project.tone]} ${className}`}>
-        {project.cover ? (
-          <Image
-            src={project.cover}
-            alt=""
-            fill
-            preload={isHero}
-            sizes={isHero ? "(min-width: 1152px) 72rem, 100vw" : "(min-width: 768px) 36rem, 100vw"}
-            className="object-cover"
-          />
-        ) : (
-          <div aria-hidden className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-            <Sparkle className={`absolute right-6 top-6 ${isHero ? "size-10" : "size-7"}`} />
-            <p className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">
-              {project.stack.slice(0, 3).join(" · ")}
-            </p>
-            <p
-              className={`font-display text-outline mt-2 font-black uppercase leading-[0.85] ${isHero ? "text-[11cqw]" : "text-[14cqw]"}`}
-            >
-              {project.title}
-            </p>
-          </div>
-        )}
-      </div>
-    </ViewTransition>
+    <div className={`@container relative overflow-hidden rounded-2xl ${tones[project.tone]} ${className}`}>
+      {project.cover ? (
+        <Image
+          src={project.cover}
+          alt=""
+          fill
+          preload={isHero}
+          sizes={imageSizes[size]}
+          className="object-cover"
+        />
+      ) : (
+        <div aria-hidden className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+          <Sparkle className={`absolute right-6 top-6 ${isHero ? "size-10" : "size-7"}`} />
+          <p className="font-mono text-xs uppercase tracking-[0.2em] opacity-80">
+            {project.stack.slice(0, 3).join(" · ")}
+          </p>
+          <p
+            className={`font-display text-outline mt-2 font-black uppercase leading-[0.85] ${isHero ? "text-[11cqw]" : "text-[14cqw]"}`}
+          >
+            {project.title}
+          </p>
+        </div>
+      )}
+    </div>
   );
 };
+
+type ProjectCoverProps = ProjectArtProps & { size?: "card" | "hero" };
+
+export const ProjectCover = ({ project, size = "card", className = "" }: ProjectCoverProps) => (
+  <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
+    <ProjectArt project={project} size={size} className={className} />
+  </ViewTransition>
+);
