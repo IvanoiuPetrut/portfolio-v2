@@ -1,19 +1,22 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import type { Project } from "@/content/types";
+import { cardSurface, cardTitle } from "./card";
 import { Pill } from "./pill";
 import { ProjectCover } from "./project-cover";
 
 type ProjectCardProps = { project: Project };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => (
-  <article className="reveal group relative flex flex-col rounded-3xl border border-line bg-surface p-3 transition duration-300 hover:-translate-y-1 hover:border-accent-ink has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-4 has-[a:focus-visible]:outline-accent-ink motion-reduce:hover:translate-y-0">
+  <article
+    className={`${cardSurface} group flex flex-col p-3 has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-4 has-[a:focus-visible]:outline-accent-ink`}
+  >
     <ProjectCover project={project} className="aspect-[4/3]" />
-    <div className="flex flex-1 flex-col p-4 md:p-5">
+    <div className="flex flex-1 flex-col p-3 md:p-4">
       <p className="font-mono text-xs uppercase tracking-[0.15em] text-ink-muted">
         {project.client} · {project.year}
       </p>
-      <h3 className="font-display mt-2 text-3xl font-bold">
+      <h3 className={`${cardTitle} mt-2`}>
         <Link
           href={`/projects/${project.slug}`}
           className="after:absolute after:inset-0 after:rounded-3xl focus-visible:outline-none"

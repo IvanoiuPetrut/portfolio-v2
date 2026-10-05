@@ -1,6 +1,7 @@
 import { getProjects } from "@/lib/projects";
 import { ProjectCard } from "../ui/project-card";
 import { Section } from "../ui/section";
+import { SpotlightGrid } from "../ui/spotlight-grid";
 
 export const Projects = () => (
   <Section
@@ -11,12 +12,12 @@ export const Projects = () => (
     intro="A few projects I led from first call to launch. Each case study covers the problem, the approach and the results."
     className="border-t border-line"
   >
-    <ul className="grid gap-6 md:grid-cols-2">
+    <SpotlightGrid className="grid gap-5 md:grid-cols-2">
       {getProjects().map((project) => (
         <li key={project.slug} className="flex">
           <ProjectCard project={project} />
         </li>
       ))}
-    </ul>
+    </SpotlightGrid>
   </Section>
 );

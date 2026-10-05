@@ -1,6 +1,7 @@
 import type { SimpleIcon } from "simple-icons";
 import { skillGroups } from "@/content/skills";
 import type { Skill, SkillLevel } from "@/content/types";
+import { cardSurface, cardTitle } from "../ui/card";
 import { Section } from "../ui/section";
 import { SpotlightGrid } from "../ui/spotlight-grid";
 
@@ -49,12 +50,12 @@ export const Skills = () => (
 
     <SpotlightGrid className="grid gap-5 md:grid-cols-2">
       {skillGroups.map(({ title, icon: GroupIcon, skills }) => (
-        <li key={title} className="spotlight reveal rounded-3xl border border-line bg-surface p-6 md:p-7">
+        <li key={title} className={`${cardSurface} p-6 md:p-7`}>
           <div className="flex items-center gap-3">
             <span className="inline-flex size-10 items-center justify-center rounded-full bg-accent text-on-accent">
               <GroupIcon aria-hidden className="size-[18px]" />
             </span>
-            <h3 className="font-display text-2xl font-bold">{title}</h3>
+            <h3 className={cardTitle}>{title}</h3>
           </div>
           <ul className={`mt-6 grid gap-x-4 gap-y-3 ${skills.some((skill) => skill.level) ? "" : "grid-cols-2"}`}>
             {skills.map((skill) => (
