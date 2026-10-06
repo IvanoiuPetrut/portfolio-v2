@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Petrut Ivanoiu – Resume</title>
+<style>
+  @page { size: A4; margin: 12mm 18mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-family: "Inter", sans-serif; font-size: 9.6pt; line-height: 1.45; color: #1a1a1a; -webkit-print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; border-bottom: 0.5pt solid #9a9a9a; }
+  ul { list-style: none; }
+
+  header { padding-bottom: 12pt; }
+  h1 { font-size: 22pt; font-weight: 600; letter-spacing: 0.04em; line-height: 1.1; }
+  .role { margin-top: 3pt; font-size: 11pt; color: #555; }
+  .contact { margin-top: 8pt; display: flex; flex-wrap: wrap; gap: 0 14pt; font-size: 8.8pt; color: #444; }
+
+  section { break-inside: avoid; display: grid; grid-template-columns: 26mm 1fr; column-gap: 6mm; padding: 9pt 0; border-top: 0.5pt solid #d4d4d4; }
+  .page-top { border-top: 0; padding-top: 0; }
+  h2 { font-size: 7.6pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #777; padding-top: 2pt; }
+
+  .item + .item { margin-top: 9pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .title { font-weight: 600; }
+  .org { font-weight: 400; color: #555; }
+  .when { font-size: 8.8pt; color: #777; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  b { font-weight: 600; color: #1a1a1a; }
+  .stack { margin-top: 1pt; font-size: 8.8pt; color: #777; }
+  .item p, .item li { color: #333; }
+  .item p { margin-top: 2pt; }
+  .bullets li { position: relative; padding-left: 9pt; margin-top: 2pt; }
+  .bullets li::before { content: "–"; position: absolute; left: 0; color: #999; }
+  .item, .role-line { break-inside: avoid; }
+
+  .roles { margin-top: 4pt; }
+  .role-line { display: flex; justify-content: space-between; gap: 12pt; margin-top: 2pt; }
+  .role-line .title { font-weight: 500; }
+  .role-line .title.current { font-weight: 600; }
+
+  .meta { font-size: 8.6pt; color: #777; margin-left: 6pt; }
+  .meta a { border-bottom-color: #c4c4c4; }
+  .skills { display: grid; grid-template-columns: 28mm 1fr; row-gap: 3pt; }
+  .skills dt { color: #777; }
+  .skills dd { color: #333; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PETRUT IVANOIU</h1>
+  <p class="role">Front End Specialist</p>
+  <p class="contact">
+    <span>Sibiu, Romania</span>
+    <a href="mailto:petrut.ivanoiu@mailbox.org">petrut.ivanoiu@mailbox.org</a>
+    <span>0758 808 515</span>
+  </p>
+  <p class="contact" style="margin-top:2pt">
+    <a href="https://petrut.dev">petrut.dev</a>
+    <a href="https://github.com/IvanoiuPetrut">github.com/IvanoiuPetrut</a>
+    <a href="https://www.linkedin.com/in/ivanoiu-petrut-dragos/">linkedin.com/in/ivanoiu-petrut-dragos</a>
+  </p>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p>Software developer at Visma specialising in front end with React and Next.js, and comfortable across the stack with .NET, AWS, Docker and CI/CD. I started in infrastructure and operations, which shapes how I build, ship and run software. AWS Certified Developer.</p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+  <div>
+    <div class="item">
+      <div class="row"><span class="title">Visma <span class="org">· Sibiu</span></span><span class="when">2022 – Present</span></div>
+      <div class="roles">
+        <div class="role-line"><span class="title current">Software Developer</span><span class="when">2024 – Present</span></div>
+        <ul class="bullets">
+          <li>Specialise in front end, building user-facing features with <b>React</b> and <b>Next.js</b>.</li>
+          <li>Also work with <b>AWS</b>, <b>Docker</b>, <b>CI/CD</b> pipelines and <b>.NET 10</b>.</li>
+        </ul>
+        <div class="role-line" style="margin-top:6pt"><span class="title">System Engineer</span><span class="when">2023 – 2024</span></div>
+        <ul class="bullets">
+          <li>Oversaw and resolved issues in critical business applications across on-premise and cloud environments, including AWS and Azure.</li>
+          <li>Built team tools: a status page web application for managing incidents, and Python scripts that automate repetitive tasks.</li>
+        </ul>
+        <div class="role-line" style="margin-top:6pt"><span class="title">Technical Trainee</span><span class="when">2022 – 2023</span></div>
+        <ul class="bullets">
+          <li>Worked in operations, handling highly critical business applications.</li>
+          <li>Monitored applications and systems, including night shifts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="row"><span class="title">Technical Trainer <span class="org">· Swiss Webacademy</span></span><span class="when">2024 – Present</span></div>
+      <ul class="bullets">
+        <li>Teach a Full Stack Development course (Vue.js, Node.js) made up of several modules and hands-on projects.</li>
+        <li>Give instruction and feedback, and support students throughout.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="row"><span class="title">Front-end Developer <span class="org">· Graffino</span></span><span class="when">2022</span></div>
+      <ul class="bullets">
+        <li>Built a responsive web application that works well across devices and screen sizes.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Front end</dt><dd>React, Next.js, TypeScript, JavaScript (ES6), HTML, CSS, Vue</dd>
+    <dt>Back end</dt><dd>.NET 10, C#, Node.js, Express, REST APIs, MVC, Python, PowerShell</dd>
+    <dt>Cloud &amp; DevOps</dt><dd>AWS, Docker, CI/CD, Azure, Linux</dd>
+    <dt>Strengths</dt><dd>Communication, problem solving, troubleshooting, security awareness</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div>
+    <div class="item"><div class="row"><span class="title">AWS Certified Developer – Associate</span></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div>
+    <div class="item">
+      <div class="row"><span class="title">Multimedia System Engineering <span class="org">· Lucian Blaga University of Sibiu</span></span><span class="when">2020 – 2024</span></div>
+      <p>Bachelor’s degree in Computer Science. Top of my class, final exam score 9.70.</p>
+    </div>
+    <div class="item">
+      <div class="row"><span class="title">Computer Programming and Mathematics <span class="org">· National College “Onisifor Ghibu”</span></span><span class="when">2016 – 2020</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-top">
+  <h2>Projects</h2>
+  <div>
+    <div class="item">
+      <div class="row"><span><span class="title">Hangout</span><span class="meta"><a href="https://github.com/IvanoiuPetrut/hangout-front-end">Front end</a> · <a href="https://github.com/IvanoiuPetrut/hangout-backend">Back end</a> · <a href="https://www.youtube.com/watch?v=HNb0TTiL960">Demo</a></span></span></div>
+      <p>Chat app with direct messages and peer-to-peer audio and video channels.</p>
+      <p class="stack">Vue · TypeScript · Express · WebRTC · WebSockets · AWS (S3, Cognito, Amplify) · Docker</p>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="title">Chrono Switch</span><span class="meta"><a href="https://twistke.itch.io/chrono-switch">Play</a> · <a href="https://github.com/IvanoiuPetrut/gamedevjs-gamejam-2k24">GitHub</a></span></span><span class="when">2024</span></div>
+      <p>2D pixel art platformer where the player controls time to reveal hidden paths. Award winner at GameDev.js Jam 2024, featured in the Phaser newsletter.</p>
+      <p class="stack">JavaScript · Phaser</p>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="title">Prmpting Concept Art</span><span class="meta"><a href="https://github.com/IvanoiuPetrut/prompting-concept-art">GitHub</a> · <a href="https://www.youtube.com/watch?v=2rP7MsklN4w">Demo</a></span></span></div>
+      <p>Generates concept art from a prompt and lets you refine parts of the image with new prompts.</p>
+      <p class="stack">Vue 3 · AWS · OpenAI API</p>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="title">Game Shelf</span><span class="meta"><a href="https://game-shelf.petrut.dev/">Live</a> · <a href="https://github.com/IvanoiuPetrut/game-shelf-client">GitHub</a></span></span></div>
+      <p>Search for video games and browse their details using the RAWG API.</p>
+      <p class="stack">Vue · Pinia · Axios · SASS</p>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="title">Weather App</span><span class="meta"><a href="https://weather.petrut.dev/">Live</a> · <a href="https://github.com/IvanoiuPetrut/weather-app">GitHub</a></span></span></div>
+      <p>Current weather, a three-day outlook and a 24-hour forecast for any city.</p>
+      <p class="stack">Vue · Vuex · Axios · SASS</p>
+    </div>
+    <div class="item">
+      <div class="row"><span><span class="title">Audio-video Processing</span><span class="meta"><a href="https://github.com/IvanoiuPetrut/audio-video-processing">GitHub</a> · <a href="https://www.youtube.com/watch?v=2WkaNH3bdeQ">Demo</a></span></span></div>
+      <p>Windows app that applies video and audio operations such as gamma correction, with region-of-interest support for video.</p>
+      <p class="stack">C# · EmguCV · NAudio</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Interests</h2>
+  <p>Drawing and running. I tinker with anything tech: making games, 2D and 3D art, sound effects and music, and I take part in game jams.</p>
+</section>
+
+</body>
+</html>
