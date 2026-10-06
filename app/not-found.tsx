@@ -8,7 +8,7 @@ import { OutlineEcho } from "@/components/ui/outline-echo";
 import { Sparkle } from "@/components/ui/sparkle";
 import { SpotlightGrid } from "@/components/ui/spotlight-grid";
 import { profile } from "@/content/profile";
-import { getProjects } from "@/lib/projects";
+import { getProjectMeta, getProjects } from "@/lib/projects";
 
 export const metadata: Metadata = { title: "Page not found" };
 
@@ -40,7 +40,7 @@ export default function NotFound() {
 
       <section aria-labelledby="suggestions-title" className="mt-20">
         <h2 id="suggestions-title" className="font-display text-2xl font-bold">
-          Or pick up one of these case studies
+          Or take a look at one of these projects
         </h2>
         <SpotlightGrid className="mt-6 grid gap-5 md:grid-cols-2">
           {getProjects().map((project) => (
@@ -53,7 +53,7 @@ export default function NotFound() {
                 className="flex h-full flex-col p-6 focus-visible:outline-none"
               >
                 <span className="font-mono text-xs uppercase tracking-[0.15em] text-ink-muted">
-                  {project.client} · {project.year}
+                  {getProjectMeta(project)}
                 </span>
                 <span className="font-display mt-2 flex items-center gap-2 text-xl font-bold">
                   {project.title}

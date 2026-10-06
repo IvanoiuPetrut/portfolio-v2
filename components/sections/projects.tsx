@@ -8,8 +8,8 @@ export const Projects = () => (
     id="work"
     index="02"
     eyebrow="Selected work"
-    title="Recent client projects"
-    intro="A few projects I led from first call to launch. Each case study covers the problem, the approach and the results."
+    title="Things I’ve built"
+    intro="Web apps, games and desktop tools. Each project page covers what it does, what it’s built with and where to try it."
     className="border-t border-line"
   >
     <SpotlightGrid className="grid gap-5 md:grid-cols-2">

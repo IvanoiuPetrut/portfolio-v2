@@ -12,6 +12,7 @@ export type Profile = {
   email: string;
   socials: { github: string; linkedin: string };
   photo?: StaticImageData;
+  resume?: string;
 };
 
 export type Service = {
@@ -46,17 +47,23 @@ export type Hobby = { label: string; detail: string; icon: LucideIcon };
 
 export type ProjectTone = "mustard" | "tangerine" | "forest";
 
+export type ProjectLinkKind = "live" | "demo" | "repo";
+
+export type ProjectLink = { label: string; href: string; kind: ProjectLinkKind };
+
 export type Project = {
   slug: string;
   title: string;
-  client: string;
+  /** What it is, e.g. "Web app" or "Game". */
+  kind: string;
   summary: string;
-  year: number;
-  role: string;
-  duration: string;
   stack: readonly string[];
   tone: ProjectTone;
-  stats: readonly { value: string; label: string }[];
-  links?: { live?: string; repo?: string };
+  links: readonly ProjectLink[];
   cover?: StaticImageData;
+  year?: number;
+  client?: string;
+  role?: string;
+  duration?: string;
+  stats?: readonly { value: string; label: string }[];
 };

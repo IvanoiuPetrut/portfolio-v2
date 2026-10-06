@@ -34,7 +34,7 @@ export const ProjectArt = ({ project, size = "card", className = "" }: ProjectAr
           fill
           preload={isHero}
           sizes={imageSizes[size]}
-          className="object-cover"
+          className="object-contain p-[4%]"
         />
       ) : (
         <div aria-hidden className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Project } from "@/content/types";
 import { cardSurface, cardTitle } from "./card";
 import { Pill } from "./pill";
+import { getProjectMeta } from "@/lib/projects";
 import { ProjectCover } from "./project-cover";
 
 type ProjectCardProps = { project: Project };
@@ -14,7 +15,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => (
     <ProjectCover project={project} className="aspect-[4/3]" />
     <div className="flex flex-1 flex-col p-3 md:p-4">
       <p className="font-mono text-xs uppercase tracking-[0.15em] text-ink-muted">
-        {project.client} · {project.year}
+        {getProjectMeta(project)}
       </p>
       <h3 className={`${cardTitle} mt-2`}>
         <Link
@@ -33,7 +34,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => (
         ))}
       </ul>
       <p className="mt-auto flex items-center gap-1 pt-6 text-sm font-medium text-accent-ink">
-        Read case study
+        View project
         <ArrowUpRight aria-hidden className="size-4 transition group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5" />
       </p>
     </div>

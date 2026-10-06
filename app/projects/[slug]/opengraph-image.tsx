@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import { getProject, getProjects } from "@/lib/projects";
+import { getProject, getProjectMeta, getProjects } from "@/lib/projects";
 import { ogSize, renderOgCard } from "@/lib/og";
 
-export const alt = "Project case study";
+export const alt = "Project";
 export const size = ogSize;
 export const contentType = "image/png";
 
@@ -15,7 +15,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   if (!project) notFound();
 
   return renderOgCard({
-    eyebrow: `Case study · ${project.client}`,
+    eyebrow: `Project · ${getProjectMeta(project)}`,
     title: project.title,
     subtitle: project.summary,
     tone: project.tone,
