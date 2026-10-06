@@ -1,4 +1,4 @@
-import { Mail, MapPin } from "lucide-react";
+import { FileText, Mail, MapPin } from "lucide-react";
 import { profile } from "@/content/profile";
 import { ButtonLink } from "../ui/button-link";
 import { Container } from "../ui/container";
@@ -23,6 +23,7 @@ const contactLinks = [
   { href: `mailto:${profile.email}`, label: profile.email, icon: Mail },
   { href: profile.socials.github, label: "GitHub", icon: GithubIcon },
   { href: profile.socials.linkedin, label: "LinkedIn", icon: LinkedinIcon },
+  { href: profile.resume, label: "Resume (PDF)", icon: FileText },
 ] as const;
 
 export const Hero = () => (
