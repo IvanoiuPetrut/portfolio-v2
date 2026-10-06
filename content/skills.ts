@@ -4,7 +4,6 @@ import {
   siDocker,
   siDotnet,
   siFigma,
-  siGithubactions,
   siHtml5,
   siJavascript,
   siLinux,
@@ -50,6 +49,7 @@ export const skillGroups: readonly SkillGroup[] = [
     skills: [
       { name: "AWS", icon: Cloud },
       { name: "Azure", icon: CloudCog },
+      { name: "Docker", icon: siDocker },
       { name: "CI/CD pipelines", icon: Workflow },
       { name: "Linux", icon: siLinux },
     ],
@@ -58,8 +58,6 @@ export const skillGroups: readonly SkillGroup[] = [
     title: "Everyday tools",
     icon: Wrench,
     skills: [
-      { name: "Docker", icon: siDocker },
-      { name: "GitHub Actions", icon: siGithubactions },
       { name: "Terraform", icon: siTerraform },
       { name: "Vercel", icon: siVercel },
       { name: "Figma", icon: siFigma },

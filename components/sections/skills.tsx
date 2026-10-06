@@ -39,7 +39,7 @@ export const Skills = () => (
     id="skills"
     index="04"
     eyebrow="Skills"
-    title="Tools and technologies"
+    title="What I work with"
     className="border-t border-line"
   >
     {hasLevels && (

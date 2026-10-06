@@ -45,7 +45,7 @@ export type SkillGroup = {
   skills: readonly Skill[];
 };
 
-export type Hobby = { label: string; detail: string; icon: LucideIcon };
+export type Hobby = { label: string; detail: string; icon: LucideIcon; href?: string };
 
 export type ProjectTone = "mustard" | "tangerine" | "forest";
 

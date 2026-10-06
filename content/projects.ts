@@ -119,7 +119,7 @@ export const projects = [
     title: "Audio-video Processing",
     kind: "Windows app",
     year: 2023,
-    summary: "A desktop tool that loads video or audio files and applies effects like gamma correction, on a region of interest for video.",
+    summary: "A desktop tool that applies effects like gamma correction to audio and video, including to a selected area of the frame.",
     stack: ["C#", "EmguCV", "NAudio"],
     tone: "tangerine",
     links: [
@@ -133,7 +133,7 @@ export const projects = [
     title: "Paint Clone",
     kind: "Windows app",
     year: 2022,
-    summary: "A Paint-style drawing app with the classic tools plus a few extras, written in C# with an emphasis on OOP.",
+    summary: "A Paint-style drawing app in C#, with the classic tools plus a few of my own.",
     stack: ["C#"],
     tone: "forest",
     links: [

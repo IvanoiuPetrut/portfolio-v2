@@ -72,6 +72,9 @@ export const ContactCta = ({ title = "Have a project in mind?" }: ContactCtaProp
       >
         {title}
       </h2>
+      <p className="mt-6 max-w-xl text-pretty text-lg leading-prose text-ink-muted">
+        Tell me what you’re building and where you’re stuck. I’ll reply with how I’d approach it.
+      </p>
       <div className="mt-10 flex flex-wrap justify-center gap-3">
         <ButtonLink href={`mailto:${profile.email}`}>
           <Mail aria-hidden className="size-4" />
