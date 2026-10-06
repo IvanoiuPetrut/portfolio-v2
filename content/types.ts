@@ -19,6 +19,8 @@ export type Service = {
   title: string;
   summary: string;
   deliverables: readonly string[];
+  /** Where this was done before, so the offer is backed by real work. */
+  proof: string;
   icon: LucideIcon;
 };
 

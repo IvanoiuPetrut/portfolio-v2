@@ -11,7 +11,7 @@ export const Services = () => (
     intro="Fixed-scope projects or ongoing work, with weekly demos so you always know where things stand."
   >
     <ul className="grid gap-5 md:grid-cols-3">
-      {services.map(({ title, summary, deliverables, icon: Icon }) => (
+      {services.map(({ title, summary, deliverables, proof, icon: Icon }) => (
         <li key={title} className="reveal flex flex-col rounded-3xl border border-line bg-surface p-7">
           <span className="inline-flex size-12 items-center justify-center rounded-full bg-accent text-on-accent">
             <Icon aria-hidden className="size-5" />
@@ -26,6 +26,7 @@ export const Services = () => (
               </li>
             ))}
           </ul>
+          <p className="mt-auto pt-6 text-sm leading-prose text-ink-muted">{proof}</p>
         </li>
       ))}
     </ul>

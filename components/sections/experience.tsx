@@ -1,4 +1,4 @@
-import { experience, workValues } from "@/content/experience";
+import { experience, highlights } from "@/content/experience";
 import { Section } from "../ui/section";
 import { Sparkle } from "../ui/sparkle";
 
@@ -7,7 +7,7 @@ export const Experience = () => (
     id="experience"
     index="03"
     eyebrow="Experience"
-    title="Where I've worked"
+    title="Four years on business-critical software"
     className="border-t border-line"
   >
     <div className="reveal rounded-4xl bg-accent p-6 text-on-accent sm:p-10 md:p-14">
@@ -26,8 +26,8 @@ export const Experience = () => (
           </li>
         ))}
       </ol>
-      <ul aria-label="How I work" className="mt-12 flex flex-wrap gap-3 border-t border-on-accent/20 pt-10">
-        {workValues.map((value) => (
+      <ul aria-label="Highlights" className="mt-12 flex flex-wrap gap-3 border-t border-on-accent/20 pt-10">
+        {highlights.map((value) => (
           <li key={value} className="rounded-full bg-panel px-4 py-2 text-sm font-medium text-panel-ink">
             {value}
           </li>

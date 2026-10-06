@@ -9,7 +9,7 @@ export const Projects = () => (
     index="02"
     eyebrow="Selected work"
     title="Things I’ve built"
-    intro="Web apps, games and desktop tools. Each project page covers what it does, what it’s built with and where to try it."
+    intro="From real-time video chat to an award-winning game jam entry. Each one links to a live version, a demo or the source code."
     className="border-t border-line"
   >
     <SpotlightGrid className="grid gap-5 md:grid-cols-2">

@@ -1,3 +1,15 @@
 ## Overview
 
 Prmpting Concept Art is a web app where you give a prompt and it generates concept art from it. You can then iterate on parts of the image with new prompts.
+
+## How it works
+
+You sign in, describe what you want, and the app returns a generated image. To change part of it, you paint over that area with an eraser brush on an HTML canvas, with an adjustable brush size. The brush uses the canvas’s `destination-out` blend mode, which cuts the painted area out to transparent pixels.
+
+The app exports the result as a PNG mask and uploads it, then you write a new prompt for what should fill the erased part. A Node.js back end on AWS stores the images and sends them, with the mask and the prompt, to the OpenAI API.
+
+## Looking back
+
+The idea came in 2023, while AI was booming, and I wanted to build something of my own with it. While building the app I kept doubting whether it would succeed, and that doubt pulled my focus away from the work itself.
+
+Looking back, the doubt missed the point. The project taught me how image models work with prompts and masks, how to edit images directly in the browser, and how to take an idea from a blank page to a working app.

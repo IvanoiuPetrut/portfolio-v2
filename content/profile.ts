@@ -7,8 +7,8 @@ export const profile = {
   shortName: "Petrut I.",
   role: "Full-stack developer",
   about:
-    "I build fast, dependable web apps, APIs and integrations for startups and small teams. You get one developer who owns the whole stack, from the database schema to the last pixel, and who explains trade-offs in plain language.",
-  location: "Bucharest, Romania",
+    "I build web apps, APIs and integrations for startups and small teams. By day I’m a developer at Visma, leading the cloud migration of a payroll-critical app. I started in operations, keeping business-critical systems running through night shifts, so I build software that’s easy to run and hard to break.",
+  location: "Sibiu, Romania",
   email: "petrut.ivanoiu@mailbox.org",
   socials: {
     github: "https://github.com/IvanoiuPetrut",

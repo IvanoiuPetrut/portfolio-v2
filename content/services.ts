@@ -1,38 +1,42 @@
-import { Gauge, LayoutTemplate, Workflow } from "lucide-react";
+import { CloudCog, LayoutTemplate, Workflow } from "lucide-react";
 import type { Service } from "./types";
 
 export const services = [
   {
     title: "Web apps",
     summary:
-      "Customer-facing products and internal tools, designed for speed and built to be easy to change.",
+      "Customer-facing products and internal tools, built to be fast and easy to change.",
     deliverables: [
       "Next.js and React front ends",
       "Accessible, responsive UI",
-      "Auth, payments and dashboards",
+      "Auth, dashboards and internal tools",
     ],
+    proof:
+      "At Visma: features for a payroll-critical app, and an incident status page used across the company.",
     icon: LayoutTemplate,
   },
   {
     title: "APIs and integrations",
     summary:
-      "Back ends that connect your systems: clean APIs, background jobs and third-party services.",
+      "Back ends that connect your systems: clean APIs, real-time features and third-party services.",
     deliverables: [
-      "REST and webhook APIs",
-      "Stripe, CRM and ERP integrations",
-      "Data models and migrations",
+      "REST APIs in Node.js and .NET",
+      "Real-time features with WebSockets",
+      "Third-party and AI API integrations",
     ],
+    proof: "Hangout runs on my Express API, with Socket.IO, Prisma and Cognito sign-in.",
     icon: Workflow,
   },
   {
-    title: "Performance and rescue",
+    title: "Cloud and reliability",
     summary:
-      "Slow, fragile or half-finished codebase? I find the bottlenecks and stabilise what you have.",
+      "Moving to the cloud, or already there and things keep breaking? I set up deployments, monitoring and automation so your app stays up.",
     deliverables: [
-      "Core Web Vitals audits",
-      "Query and caching fixes",
-      "Test coverage and CI setup",
+      "AWS setup and cloud migrations",
+      "Docker and CI/CD pipelines",
+      "Monitoring and task automation",
     ],
-    icon: Gauge,
+    proof: "AWS Certified Developer, currently leading a cloud migration at Visma.",
+    icon: CloudCog,
   },
 ] as const satisfies readonly Service[];
