@@ -31,6 +31,9 @@ const LevelMeter = ({ level }: { level: SkillLevel }) => (
   </span>
 );
 
+// The legend only appears when at least one skill carries a level.
+const hasLevels = skillGroups.some(({ skills }) => skills.some((skill) => skill.level));
+
 export const Skills = () => (
   <Section
     id="skills"
@@ -39,14 +42,16 @@ export const Skills = () => (
     title="Tools and technologies"
     className="border-t border-line"
   >
-    <ul aria-hidden className="mb-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-muted">
-      {(Object.keys(levels) as SkillLevel[]).map((level) => (
-        <li key={level} className="flex items-center gap-2">
-          <LevelMeter level={level} />
-          {level}
-        </li>
-      ))}
-    </ul>
+    {hasLevels && (
+      <ul aria-hidden className="mb-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-muted">
+        {(Object.keys(levels) as SkillLevel[]).map((level) => (
+          <li key={level} className="flex items-center gap-2">
+            <LevelMeter level={level} />
+            {level}
+          </li>
+        ))}
+      </ul>
+    )}
 
     <SpotlightGrid className="grid gap-5 md:grid-cols-2">
       {skillGroups.map(({ title, icon: GroupIcon, skills }) => (

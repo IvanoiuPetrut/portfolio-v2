@@ -13,7 +13,7 @@ export const Experience = () => (
     <div className="reveal rounded-4xl bg-accent p-6 text-on-accent sm:p-10 md:p-14">
       <ol className="space-y-10">
         {experience.map((item) => (
-          <li key={item.period} className="grid gap-2 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-10">
+          <li key={`${item.company}-${item.role}`} className="grid gap-2 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-10">
             <p className="flex items-center gap-3 font-mono text-sm font-medium">
               <Sparkle className="size-4" />
               {item.period}

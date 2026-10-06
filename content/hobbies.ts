@@ -1,9 +1,11 @@
-import { Bike, Camera, ChefHat, Mountain } from "lucide-react";
+import { AudioLines, Cpu, Footprints, Gamepad2, Pencil, Shapes } from "lucide-react";
 import type { Hobby } from "./types";
 
 export const hobbies = [
-  { label: "Hiking", detail: "Carpathian ridges", icon: Mountain },
-  { label: "Cycling", detail: "Weekend gravel loops", icon: Bike },
-  { label: "Film photography", detail: "35mm, mostly street", icon: Camera },
-  { label: "Cooking", detail: "Slow-cooked anything", icon: ChefHat },
+  { label: "Drawing", detail: "Sketching and painting", icon: Pencil },
+  { label: "Running", detail: "Away from the screen", icon: Footprints },
+  { label: "Making games", detail: "Side projects and game jams", icon: Gamepad2 },
+  { label: "2D and 3D art", detail: "Pixels, models and everything between", icon: Shapes },
+  { label: "Sound and music", detail: "Sound effects and soundtracks", icon: AudioLines },
+  { label: "Tinkering", detail: "Anything tech-related", icon: Cpu },
 ] as const satisfies readonly Hobby[];

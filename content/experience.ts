@@ -2,32 +2,39 @@ import type { ExperienceItem } from "./types";
 
 export const experience = [
   {
-    period: "2023 — now",
-    role: "Freelance full-stack developer",
-    company: "Independent",
+    period: "2024 — now",
+    role: "Software developer, front end",
+    company: "Visma",
     summary:
-      "Product builds and rescues for SaaS startups, agencies and local businesses across Europe.",
+      "Building user-facing features with React and Next.js, and working across the stack with AWS, Docker, CI/CD pipelines and .NET 10.",
   },
   {
-    period: "2020 — 2023",
-    role: "Senior software engineer",
-    company: "Northwind Payroll",
+    period: "2024 — now",
+    role: "Technical trainer",
+    company: "Swiss Webacademy",
     summary:
-      "Led the move from a legacy monolith to a Next.js front end over typed .NET APIs serving 40k users.",
+      "Teaching a full-stack course in Vue.js and Node.js, made up of several modules and hands-on projects, with feedback and support throughout.",
   },
   {
-    period: "2018 — 2020",
-    role: "Software engineer",
-    company: "Brightlane Studio",
+    period: "2023 — 2024",
+    role: "System engineer",
+    company: "Visma",
     summary:
-      "Shipped e-commerce and booking sites for agency clients, owning delivery from kickoff to launch.",
+      "Oversaw and resolved issues in critical business applications across on-premise, AWS and Azure. Built a status page for managing incidents and Python scripts that automate repetitive tasks.",
   },
   {
-    period: "2016 — 2018",
-    role: "Junior developer",
-    company: "Cobalt Logistics",
+    period: "2022 — 2023",
+    role: "Technical trainee",
+    company: "Visma",
     summary:
-      "Built tracking dashboards and carrier integrations for a regional freight company.",
+      "Worked in operations on highly critical business applications, monitoring them around the clock, including night shifts.",
+  },
+  {
+    period: "2022",
+    role: "Front-end developer",
+    company: "Graffino",
+    summary:
+      "Built a responsive web application that works well across devices and screen sizes.",
   },
 ] as const satisfies readonly ExperienceItem[];
 

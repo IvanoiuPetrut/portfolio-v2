@@ -9,7 +9,7 @@ export const Hobbies = () => (
     title="Hobbies and interests"
     className="border-t border-line"
   >
-    <ul className="grid grid-cols-2 gap-8 md:grid-cols-4">
+    <ul className="grid grid-cols-2 gap-8 md:grid-cols-3">
       {hobbies.map(({ label, detail, icon: Icon }) => (
         <li key={label} className="reveal flex flex-col items-center text-center">
           <span className="flex size-24 items-center justify-center rounded-full bg-accent text-on-accent transition duration-300 hover:-rotate-6 hover:scale-105 motion-reduce:hover:transform-none">
